@@ -1,16 +1,16 @@
 [package]
-name = "elf-plugin"
+name = "eln-plugin-sdk"
 version = "0.1.0"
 edition = "2024"
 description = "Plugin API platform for the elendirna project"
 license = "MIT"
-repository = "https://github.com/elen-labs/elf-plugin"
+repository = "https://github.com/elen-labs/eln-plugins"
 readme = "README.md"
 keywords = ["elendirna", "plugin", "api"]
 categories = ["development-tools"]
 
 [lib]
-name = "elf_plugin"
+name = "eln_plugin_sdk"
 path = "src/lib.rs"
 
 [dependencies]

@@ -1,4 +1,4 @@
-//! # elf-plugin
+//! # eln-plugin-sdk
 //!
 //! Plugin API platform for the [elendirna](https://github.com/elen-labs/elendirna) project.
 //!

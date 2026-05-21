@@ -1,4 +1,4 @@
-# elf-plugin
+# eln-plugin-sdk
 
 Plugin API platform crate for elendirna. Interface contract only — concrete implementations live in `elen-labs/plugins/{plugin_name}` repos.
 

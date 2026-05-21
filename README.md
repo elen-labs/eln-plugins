@@ -1,4 +1,4 @@
-# elf-plugin
+# eln-plugin-sdk
 
 Plugin API platform for the [elendirna](https://github.com/elen-labs/elendirna) project.
 
@@ -10,7 +10,7 @@ Scaffold. Trait definitions are deferred pending design decisions tracked in the
 
 ## Layout
 
-- `elf-plugin` (this crate) — interface contract
+- `eln-plugin-sdk` (this crate) — interface contract
 - `elen-labs/elendirna` — core elendirna (host)
 - `elen-labs/plugins/{plugin_name}` — concrete plugin modules
 
