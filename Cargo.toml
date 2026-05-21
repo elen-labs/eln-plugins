@@ -1,0 +1,16 @@
+[package]
+name = "elf-plugin"
+version = "0.1.0"
+edition = "2024"
+description = "Plugin API platform for the elendirna project"
+license = "MIT"
+repository = "https://github.com/elen-labs/elf-plugin"
+readme = "README.md"
+keywords = ["elendirna", "plugin", "api"]
+categories = ["development-tools"]
+
+[lib]
+name = "elf_plugin"
+path = "src/lib.rs"
+
+[dependencies]
