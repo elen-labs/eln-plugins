@@ -1,3 +1,7 @@
+[workspace]
+members = [".", "examples/echo-tool", "examples/tiny-write"]
+resolver = "2"
+
 [package]
 name = "eln-plugin-sdk"
 version = "0.1.0"
