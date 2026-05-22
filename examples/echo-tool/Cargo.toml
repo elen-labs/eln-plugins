@@ -1,0 +1,18 @@
+[package]
+name = "echo-tool"
+version = "0.1.0"
+edition = "2024"
+publish = false
+description = "In-process SDK example — READ-only echo tool"
+
+[lib]
+name = "echo_tool"
+path = "src/lib.rs"
+
+[dependencies]
+eln-plugin-sdk = { path = "../.." }
+async-trait = "0.1"
+serde_json = "1"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt"] }
