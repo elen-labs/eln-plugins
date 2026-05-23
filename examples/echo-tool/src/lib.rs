@@ -54,11 +54,7 @@ mod tests {
     use eln_plugin_sdk::Identity;
 
     fn ctx_read() -> CallContext {
-        CallContext {
-            session_id: "test-sess".into(),
-            identity: Identity::Human,
-            permissions: Permissions::READ,
-        }
+        CallContext::new("test-sess".into(), Identity::Human, Permissions::READ)
     }
 
     #[tokio::test]

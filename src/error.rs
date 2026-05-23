@@ -7,12 +7,20 @@ use crate::Permissions;
 
 #[derive(Debug, Clone, PartialEq, Eq, Error)]
 #[error("permission denied: requires {required:?}, granted {granted:?}")]
+#[non_exhaustive]
 pub struct PermissionDenied {
     pub required: Permissions,
     pub granted: Permissions,
 }
 
+impl PermissionDenied {
+    pub fn new(required: Permissions, granted: Permissions) -> Self {
+        Self { required, granted }
+    }
+}
+
 #[derive(Debug, Error)]
+#[non_exhaustive]
 pub enum ToolError {
     #[error(transparent)]
     PermissionDenied(#[from] PermissionDenied),

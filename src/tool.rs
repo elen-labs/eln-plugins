@@ -11,10 +11,21 @@ use crate::{Identity, Permissions, ToolError};
 /// `permissions`는 caller에게 부여된 권한 비트 — S2는 stdio=ADMIN, HTTP=READ
 /// hard-code, S3에서 ApiKey-derived로 교체.
 #[derive(Debug, Clone)]
+#[non_exhaustive]
 pub struct CallContext {
     pub session_id: String,
     pub identity: Identity,
     pub permissions: Permissions,
+}
+
+impl CallContext {
+    pub fn new(session_id: String, identity: Identity, permissions: Permissions) -> Self {
+        Self {
+            session_id,
+            identity,
+            permissions,
+        }
+    }
 }
 
 #[async_trait]

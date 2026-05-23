@@ -89,11 +89,7 @@ impl ToolHandler for AppendNote {
 
     async fn call(&self, ctx: &CallContext, args: Value) -> Result<Value, ToolError> {
         if !ctx.permissions.contains(Permissions::WRITE) {
-            return Err(PermissionDenied {
-                required: Permissions::WRITE,
-                granted: ctx.permissions,
-            }
-            .into());
+            return Err(PermissionDenied::new(Permissions::WRITE, ctx.permissions).into());
         }
         let id = args
             .get("id")
@@ -167,11 +163,7 @@ mod tests {
     use eln_plugin_sdk::Identity;
 
     fn ctx(perms: Permissions) -> CallContext {
-        CallContext {
-            session_id: "test-sess".into(),
-            identity: Identity::Human,
-            permissions: perms,
-        }
+        CallContext::new("test-sess".into(), Identity::Human, perms)
     }
 
     #[tokio::test]
