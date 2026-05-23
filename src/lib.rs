@@ -24,3 +24,7 @@ pub use identity::Identity;
 pub use permissions::Permissions;
 pub use server::{PluginServer, ToolDescriptor};
 pub use tool::{CallContext, ToolHandler};
+
+/// SDK crate 버전 (`CARGO_PKG_VERSION`). 호환성 진단용 — core가 session_start 응답에
+/// core 버전과 함께 노출해 plugin SDK ↔ core 버전 skew를 한눈에 드러낸다.
+pub const VERSION: &str = env!("CARGO_PKG_VERSION");
