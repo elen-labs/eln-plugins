@@ -2,17 +2,12 @@
 
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, Default)]
 #[serde(tag = "kind", rename_all = "snake_case")]
 #[non_exhaustive]
 pub enum Identity {
+    #[default]
     Human,
     Agent { name: String },
     System,
-}
-
-impl Default for Identity {
-    fn default() -> Self {
-        Identity::Human
-    }
 }
